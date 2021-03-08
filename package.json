@@ -1,0 +1,27 @@
+{
+  "name": "@edk55/math-by-quantity",
+  "version": "0.0.1",
+  "description": "Some math functions to compute the result by specifying number of numbers",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edk55/math-by-quantity.git"
+  },
+  "keywords": [
+    "math",
+    "quantity"
+  ],
+  "author": "Eugene Korobkov <e@korobkov.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edk55/math-by-quantity/issues"
+  },
+  "homepage": "https://github.com/edk55/math-by-quantity#readme"
+}
