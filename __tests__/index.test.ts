@@ -1,5 +1,5 @@
 describe('Index', () => {
-  it('Should pass init test', async () => {
+  it('Should pass init test', () => {
     expect(true).toBe(true);
   });
 });

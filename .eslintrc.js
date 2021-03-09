@@ -9,8 +9,6 @@ module.exports = {
   rules: {
     '@typescript-eslint/explicit-function-return-type': 0,
     '@typescript-eslint/consistent-type-assertions': 0,
-    '@typescript-eslint/interface-name-prefix': ['warn', { prefixWithI: 'always' }],
-    '@typescript-eslint/no-untyped-public-signature': 1, // ["error", { "ignoredMethods": ["ignoredMethodName"] }]
     '@typescript-eslint/explicit-member-accessibility': ['error'], // public method
     '@typescript-eslint/no-inferrable-types': 0,
     '@typescript-eslint/no-extra-non-null-assertion': 1,
@@ -25,6 +23,17 @@ module.exports = {
         checkFunctionDeclarations: true,
         checkFunctionExpressions: true,
         checkMethodDeclarations: true,
+      },
+    ],
+    '@typescript-eslint/naming-convention': [
+      'error',
+      {
+        selector: 'interface',
+        format: ['PascalCase'],
+        custom: {
+          regex: '^I[A-Z]',
+          match: true,
+        },
       },
     ],
   },
