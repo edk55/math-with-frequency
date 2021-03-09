@@ -2,8 +2,7 @@
   "compilerOptions": {
     "strict": true,
     "target": "es5",
-    "module": "commonjs",
-    "isolatedModules": true
+    "module": "commonjs"
   },
   "include": [
     "src",
