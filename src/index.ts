@@ -1,1 +1,1 @@
-export const func = () => {};
+export { quantile } from './quantile';

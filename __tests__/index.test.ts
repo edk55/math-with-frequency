@@ -1,5 +1,7 @@
+import { quantile } from '../src/index';
+
 describe('Index', () => {
-  it('Should pass init test', () => {
-    expect(true).toBe(true);
+  it('Should export quantile function', () => {
+    expect(quantile).toBeDefined();
   });
 });
