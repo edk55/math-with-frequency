@@ -1,4 +1,4 @@
-import { mean, quantile } from '../src/index';
+import { mean, quantile, std } from '../src/index';
 
 describe('Index', () => {
   it('Should export quantile function', () => {
@@ -7,5 +7,9 @@ describe('Index', () => {
 
   it('Should export mean function', () => {
     expect(mean).toBeDefined();
+  });
+
+  it('Should export std function', () => {
+    expect(std).toBeDefined();
   });
 });
