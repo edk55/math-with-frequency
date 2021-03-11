@@ -1,5 +1,5 @@
 {
-  "name": "@edk55/math-by-quantity",
+  "name": "math-by-quantity",
   "version": "0.0.1",
   "description": "Some math functions to compute the result by specifying number of numbers",
   "main": "dist/index.js",
