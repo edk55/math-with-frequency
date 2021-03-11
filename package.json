@@ -12,7 +12,7 @@
     "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
-    "build": "yarn clean && yarn compile",
+    "build": "npm run clean && npm run compile",
     "clean": "rm -rf ./dist && rm -f tsconfig.build.tsbuildinfo",
     "compile": "tsc -b tsconfig.build.json",
     "test": "jest",
