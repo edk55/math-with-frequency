@@ -1,4 +1,4 @@
-import { mean, quantile, std } from '../src/index';
+import { mean, quantile, StandardDeviationType, std } from '../src/index';
 
 describe('Index', () => {
   it('Should export quantile function', () => {
@@ -11,5 +11,9 @@ describe('Index', () => {
 
   it('Should export std function', () => {
     expect(std).toBeDefined();
+  });
+
+  it('Should export StandardDeviationType enum', () => {
+    expect(StandardDeviationType).toBeDefined();
   });
 });
