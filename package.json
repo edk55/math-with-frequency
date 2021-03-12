@@ -1,7 +1,7 @@
 {
   "name": "math-with-frequency",
   "version": "0.1.0",
-  "description": "Some math functions to compute the result by specifying number of numbers",
+  "description": "Math functions to use with frequency table",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -21,7 +21,8 @@
   },
   "keywords": [
     "math",
-    "frequency"
+    "frequency",
+    "frequency-table"
   ],
   "author": "Eugene Korobkov <e@korobkov.io>",
   "license": "MIT",
