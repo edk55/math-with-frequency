@@ -15,14 +15,14 @@ There are tasks when to use this type of libraries, you will have to create larg
 
 ### Example task:
 
-Given: Array of Bitcoin trade sales with price and trade volume. \
-Task: Find the median price.
+Given: Array of Bitcoin sales with price and trade volume. \
+Task: Find the mean sale price.
 
 ```js
 const btcSales = [
-  { price: 47000, volume: 1500 },
-  { price: 46000, volume: 2200 },
-  { price: 49000, volume: 1900 },
+  { price: 57000, volume: 1500 },
+  { price: 56000, volume: 2200 },
+  { price: 59000, volume: 1900 },
 ];
 ```
 
@@ -31,7 +31,7 @@ const btcSales = [
 ```js
 // salePrices.length === 5600
 const salePrices = btcSales.flatMap((sale) => new Array(sale.volume).fill(sale.price));
-median(btcSalePrices); // result
+mean(btcSalePrices); // 57285.71428571428
 ```
 
 #### `math-with-frequency` implementation:
@@ -39,7 +39,7 @@ median(btcSalePrices); // result
 ```js
 // saleNumbers.length === 3
 const saleNumbers = btcSales.map((sale) => ({ value: sale.price, frequency: sale.volume }));
-median(saleNumbers); // result
+mean(saleNumbers); // 57285.71428571428
 ```
 
 If you don't see any problem with creating big arrays of same numbers, then maybe you don't need to use this library
