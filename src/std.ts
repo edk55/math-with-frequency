@@ -1,5 +1,5 @@
 import { mean } from './mean';
-import { FrequencyObject, FrequencyTuple } from './types';
+import { Item } from './types';
 import { frequencyItemToTuple } from './utils/frequencyItemToTuple';
 import { validateFrequencyOrThrow } from './utils/validateFrequencyOrThrow';
 
@@ -10,7 +10,7 @@ export enum StandardDeviationType {
 
 // https://www.mathsisfun.com/data/standard-deviation.html
 export const std = (
-  items: (FrequencyObject<number> | FrequencyTuple<number>)[],
+  items: Item<number>[],
   type = StandardDeviationType.POPULATION
 ): number => {
   const tuples = items.map(frequencyItemToTuple);

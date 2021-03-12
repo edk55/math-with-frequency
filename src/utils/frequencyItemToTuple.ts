@@ -1,9 +1,17 @@
-import { Frequency, FrequencyObject, FrequencyTuple } from '../types';
+import { Frequency, FrequencyObject, Item } from '../types';
 
-export const frequencyItemToTuple = <Value>(
-  item: FrequencyObject<Value> | FrequencyTuple<Value>
-): [Value, Frequency] => {
+const isFrequencyObject = (
+  item: FrequencyObject<unknown> | unknown
+): item is FrequencyObject<unknown> => {
+  return typeof item === 'object' && item !== null && 'value' in item;
+};
+
+export const frequencyItemToTuple = <Value>(item: Item<Value>): [Value, Frequency] => {
   if (Array.isArray(item)) return [item[0], item[1] ?? 1];
 
-  return [item.value, item.frequency ?? 1];
+  if (isFrequencyObject(item)) {
+    return [item.value, item.frequency ?? 1];
+  }
+
+  return [item, 1];
 };

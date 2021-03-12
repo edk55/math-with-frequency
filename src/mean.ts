@@ -1,8 +1,8 @@
-import { FrequencyObject, FrequencyTuple } from './types';
+import { Item } from './types';
 import { frequencyItemToTuple } from './utils/frequencyItemToTuple';
 import { validateFrequencyOrThrow } from './utils/validateFrequencyOrThrow';
 
-export const mean = (items: (FrequencyObject<number> | FrequencyTuple<number>)[]): number => {
+export const mean = (items: Item<number>[]): number => {
   const tuples = items.map(frequencyItemToTuple);
   tuples.forEach(([, frequency]) => validateFrequencyOrThrow(frequency));
 
