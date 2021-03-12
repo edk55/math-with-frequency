@@ -48,12 +48,14 @@ If you don't see any problem with creating big arrays of same numbers, then mayb
 
 ```ts
 type Frequency = number; // int value, bigger than 0. Default is 1.
-type Value = unknown; // Depending on the type of function, it may differ. It is often number.
 
 type FrequencyObject<Value> = { value: Value; frequency?: Frequency };
 type FrequencyTuple<Value> = [Value] | [Value, Frequency];
 
-const validInput = [
+type Item<Value> = Value | FrequencyObject<Value> | FrequencyTuple<Value>;
+
+const validInput: Item<number>[] = [
+  100, // frequency is 1
   { value: 100 }, // frequency is 1
   { value: 100, frequency: 5 },
   [100], // frequency is 1
