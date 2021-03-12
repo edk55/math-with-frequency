@@ -11,6 +11,12 @@ describe('Math functions', () => {
       expect(result).toBe(1);
     });
 
+    it('Should throw if pass invalid frequency value', () => {
+      const run = () => mean([{ value: 1, frequency: -1 }]);
+
+      expect(run).toThrow();
+    });
+
     it('Should return same results as mathjs mean function', () => {
       const input = [
         { value: -100, frequency: 29 },

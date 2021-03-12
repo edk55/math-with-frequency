@@ -11,6 +11,12 @@ describe('Math functions', () => {
       expect(result).toBe(1);
     });
 
+    it('Should throw if pass invalid frequency value', () => {
+      const run = () => quantile([{ value: 1, frequency: -1 }], 0);
+
+      expect(run).toThrow();
+    });
+
     it('Should sort input values if isAscSorted is false', () => {
       const input = [{ value: 1 }, { value: 0 }];
       const start = quantile(input, 0);

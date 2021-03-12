@@ -12,6 +12,12 @@ describe('Math functions', () => {
       expect(result).toBe(0);
     });
 
+    it('Should throw if pass invalid frequency value', () => {
+      const run = () => std([{ value: 1, frequency: -1 }]);
+
+      expect(run).toThrow();
+    });
+
     it('Should use default type and return same results as simple-statistics standardDiviation function', () => {
       const input = [
         { value: -100, frequency: 29 },
