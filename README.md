@@ -26,7 +26,7 @@ const btcSales = [
 ];
 ```
 
-#### `some-math-library` implementation:
+#### `some-other-math-library` example:
 
 ```js
 // salePrices.length === 5600
@@ -34,7 +34,7 @@ const salePrices = btcSales.flatMap((sale) => new Array(sale.volume).fill(sale.p
 mean(btcSalePrices); // 57285.71428571428
 ```
 
-#### `math-with-frequency` implementation:
+#### `math-with-frequency` example:
 
 ```js
 // saleNumbers.length === 3
