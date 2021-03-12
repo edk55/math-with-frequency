@@ -1,6 +1,6 @@
 import { FrequencyObject, FrequencyTuple } from './types';
 import { frequencyItemToTuple } from './utils/frequencyItemToTuple';
-import { validateFrequency } from './utils/validateFrequency';
+import { validateFrequencyOrThrow } from './utils/validateFrequencyOrThrow';
 
 export const quantile = (
   items: (FrequencyObject<number> | FrequencyTuple<number>)[],
@@ -8,7 +8,7 @@ export const quantile = (
   isAscSorted = false
 ): number => {
   const tuples = items.map(frequencyItemToTuple);
-  validateFrequency(tuples); // if its not valid, then it will throw an Error
+  tuples.forEach(([, frequency]) => validateFrequencyOrThrow(frequency));
 
   const totalFrequency = tuples.reduce((acc, curr) => acc + curr[1], 0);
 

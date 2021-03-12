@@ -1,7 +1,7 @@
 import { mean } from './mean';
 import { FrequencyObject, FrequencyTuple } from './types';
 import { frequencyItemToTuple } from './utils/frequencyItemToTuple';
-import { validateFrequency } from './utils/validateFrequency';
+import { validateFrequencyOrThrow } from './utils/validateFrequencyOrThrow';
 
 export enum StandardDeviationType {
   POPULATION,
@@ -14,7 +14,7 @@ export const std = (
   type = StandardDeviationType.POPULATION
 ): number => {
   const tuples = items.map(frequencyItemToTuple);
-  validateFrequency(tuples); // if its not valid, then it will throw an Error
+  tuples.forEach(([, frequency]) => validateFrequencyOrThrow(frequency));
 
   const meanValue = mean(items);
 
