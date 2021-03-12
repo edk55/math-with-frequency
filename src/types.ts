@@ -1,4 +1,4 @@
-export type Quantity = number;
+export type Frequency = number;
 
-export type QuantityObject<Value> = { value: Value; quantity?: Quantity };
-export type QuantityTuple<Value> = [Value] | [Value, Quantity];
+export type FrequencyObject<Value> = { value: Value; frequency?: Frequency };
+export type FrequencyTuple<Value> = [Value] | [Value, Frequency];

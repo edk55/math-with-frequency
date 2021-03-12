@@ -1,16 +1,16 @@
-import { QuantityObject, QuantityTuple } from './types';
-import { quantityItemToTuple } from './utils/quantityItemToTuple';
-import { validateQuantity } from './utils/validateQuantity';
+import { FrequencyObject, FrequencyTuple } from './types';
+import { frequencyItemToTuple } from './utils/frequencyItemToTuple';
+import { validateFrequency } from './utils/validateFrequency';
 
 export const quantile = (
-  items: (QuantityObject<number> | QuantityTuple<number>)[],
+  items: (FrequencyObject<number> | FrequencyTuple<number>)[],
   prob: number,
   isAscSorted = false
 ): number => {
-  const tuples = items.map(quantityItemToTuple);
-  validateQuantity(tuples); // if its not valid, then it will throw an Error
+  const tuples = items.map(frequencyItemToTuple);
+  validateFrequency(tuples); // if its not valid, then it will throw an Error
 
-  const totalQuantity = tuples.reduce((acc, curr) => acc + curr[1], 0);
+  const totalFrequency = tuples.reduce((acc, curr) => acc + curr[1], 0);
 
   if (!isAscSorted) {
     tuples.sort((a, b) => a[0] - b[0]);
@@ -19,27 +19,27 @@ export const quantile = (
   if (prob === 1) return tuples[tuples.length - 1][0];
   if (prob === 0) return tuples[0][0];
 
-  const searchQuantity = (totalQuantity - 1) * prob;
-  const searchQuantityRemainder = searchQuantity % 1;
+  const searchFrequency = (totalFrequency - 1) * prob;
+  const searchFrequencyRemainder = searchFrequency % 1;
 
-  let prevQuantity = 0;
+  let prevFrequency = 0;
 
   for (let i = 0; i < tuples.length; i++) {
-    const [, tupleQuantity] = tuples[i];
+    const [, tupleFrequency] = tuples[i];
 
-    if (prevQuantity + tupleQuantity > searchQuantity) {
-      if (searchQuantityRemainder === 0) {
+    if (prevFrequency + tupleFrequency > searchFrequency) {
+      if (searchFrequencyRemainder === 0) {
         return tuples[i][0];
       }
 
       // else need to calc between two values
       const left = tuples[i][0];
-      const right = tupleQuantity > 1 ? tuples[i][0] : tuples[i + 1][0];
+      const right = tupleFrequency > 1 ? tuples[i][0] : tuples[i + 1][0];
 
-      return left * (1 - searchQuantityRemainder) + right * searchQuantityRemainder;
+      return left * (1 - searchFrequencyRemainder) + right * searchFrequencyRemainder;
     }
 
-    prevQuantity += tupleQuantity;
+    prevFrequency += tupleFrequency;
   }
 
   // If you reach here, please open an issue

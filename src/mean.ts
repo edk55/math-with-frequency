@@ -1,13 +1,13 @@
-import { QuantityObject, QuantityTuple } from './types';
-import { quantityItemToTuple } from './utils/quantityItemToTuple';
-import { validateQuantity } from './utils/validateQuantity';
+import { FrequencyObject, FrequencyTuple } from './types';
+import { frequencyItemToTuple } from './utils/frequencyItemToTuple';
+import { validateFrequency } from './utils/validateFrequency';
 
-export const mean = (items: (QuantityObject<number> | QuantityTuple<number>)[]): number => {
-  const tuples = items.map(quantityItemToTuple);
-  validateQuantity(tuples); // if its not valid, then it will throw an Error
+export const mean = (items: (FrequencyObject<number> | FrequencyTuple<number>)[]): number => {
+  const tuples = items.map(frequencyItemToTuple);
+  validateFrequency(tuples); // if its not valid, then it will throw an Error
 
-  const totalQuantity = tuples.reduce((acc, curr) => acc + curr[1], 0);
+  const totalFrequency = tuples.reduce((acc, curr) => acc + curr[1], 0);
   const totalValue = tuples.reduce((acc, curr) => acc + curr[0] * curr[1], 0);
 
-  return totalValue / totalQuantity;
+  return totalValue / totalFrequency;
 };

@@ -1,7 +1,7 @@
 import { mean } from './mean';
-import { QuantityObject, QuantityTuple } from './types';
-import { quantityItemToTuple } from './utils/quantityItemToTuple';
-import { validateQuantity } from './utils/validateQuantity';
+import { FrequencyObject, FrequencyTuple } from './types';
+import { frequencyItemToTuple } from './utils/frequencyItemToTuple';
+import { validateFrequency } from './utils/validateFrequency';
 
 export enum StandardDeviationType {
   POPULATION,
@@ -10,30 +10,30 @@ export enum StandardDeviationType {
 
 // https://www.mathsisfun.com/data/standard-deviation.html
 export const std = (
-  items: (QuantityObject<number> | QuantityTuple<number>)[],
+  items: (FrequencyObject<number> | FrequencyTuple<number>)[],
   type = StandardDeviationType.POPULATION
 ): number => {
-  const tuples = items.map(quantityItemToTuple);
-  validateQuantity(tuples); // if its not valid, then it will throw an Error
+  const tuples = items.map(frequencyItemToTuple);
+  validateFrequency(tuples); // if its not valid, then it will throw an Error
 
   const meanValue = mean(items);
 
-  const totalQuantity = tuples.reduce((acc, curr) => acc + curr[1], 0);
+  const totalFrequency = tuples.reduce((acc, curr) => acc + curr[1], 0);
 
   let deviationsSum = 0;
 
   tuples.forEach((tuple) => {
-    const [value, quantity] = tuple;
+    const [value, frequency] = tuple;
 
-    deviationsSum += (value - meanValue) ** 2 * quantity;
+    deviationsSum += (value - meanValue) ** 2 * frequency;
   });
 
-  if (type === StandardDeviationType.SAMPLE && totalQuantity < 2) {
-    throw new Error('Total quantity should be not less than 2');
+  if (type === StandardDeviationType.SAMPLE && totalFrequency < 2) {
+    throw new Error('Total frequency should be not less than 2');
   }
 
   const variance =
-    deviationsSum / (totalQuantity - (type === StandardDeviationType.SAMPLE ? 1 : 0));
+    deviationsSum / (totalFrequency - (type === StandardDeviationType.SAMPLE ? 1 : 0));
 
   return Math.sqrt(variance);
 };

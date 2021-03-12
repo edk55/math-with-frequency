@@ -1,5 +1,5 @@
 {
-  "name": "math-by-quantity",
+  "name": "math-with-frequency",
   "version": "0.1.0",
   "description": "Some math functions to compute the result by specifying number of numbers",
   "main": "dist/index.js",
@@ -17,18 +17,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/edk55/math-by-quantity.git"
+    "url": "git+https://github.com/edk55/math-with-frequency.git"
   },
   "keywords": [
     "math",
-    "quantity"
+    "frequency"
   ],
   "author": "Eugene Korobkov <e@korobkov.io>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/edk55/math-by-quantity/issues"
+    "url": "https://github.com/edk55/math-with-frequency/issues"
   },
-  "homepage": "https://github.com/edk55/math-by-quantity#readme",
+  "homepage": "https://github.com/edk55/math-with-frequency#readme",
   "devDependencies": {
     "@types/jest": "^26.0.20",
     "@types/mathjs": "^6.0.11",
