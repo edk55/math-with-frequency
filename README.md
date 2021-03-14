@@ -13,6 +13,10 @@ Install `math-with-frequency` using [npm](https://www.npmjs.com/package/math-wit
 Some math libraries ([mathjs](https://www.npmjs.com/package/mathjs), [simple-statistics](https://www.npmjs.com/package/simple-statistics)) accepts the array of numbers to calculate the result.
 There are tasks when to use this type of libraries, you will have to create large arrays of numbers.
 
+## Disclaimer
+
+The library was created on the basis of personal needs, therefore a small number of functions is available. Any pull requests are welcome!
+
 ### Example task:
 
 Given: Array of Bitcoin sales with price and trade volume. \
@@ -103,3 +107,27 @@ const input = [
 ];
 const median = quantile(input, 0.5); // 3
 ```
+
+## License
+
+MIT License
+
+Copyright (c) 2021 Eugene Korobkov (e@korobkov.io)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
