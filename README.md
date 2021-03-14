@@ -8,14 +8,14 @@ Install `math-with-frequency` using [npm](https://www.npmjs.com/package/math-wit
 
     npm install math-with-frequency
 
+## Disclaimer
+
+The library was created on the basis of personal needs, therefore a small number of functions is available. Any pull requests are welcome!
+
 ## Why
 
 Some math libraries ([mathjs](https://www.npmjs.com/package/mathjs), [simple-statistics](https://www.npmjs.com/package/simple-statistics)) accepts the array of numbers to calculate the result.
 There are tasks when to use this type of libraries, you will have to create large arrays of numbers.
-
-## Disclaimer
-
-The library was created on the basis of personal needs, therefore a small number of functions is available. Any pull requests are welcome!
 
 ### Example task:
 
