@@ -62,3 +62,44 @@ const validInput: Item<number>[] = [
   [100, 5],
 ];
 ```
+
+## API
+
+### mean(items: Item\<number\>[]): number
+
+The arithmetic mean (or simply mean) of a list of numbers, is the sum of all of the numbers divided by the number of numbers.
+
+```ts
+const input = [
+  { value: 1, frequency: 10 },
+  { value: 3, frequency: 20 },
+];
+const meanValue = mean(input); // 2.3333333333333335
+```
+
+### std(items: Item\<number\>[], type?: StandardDeviationType): number
+
+Calculate standard deviation. You can also specify `StandardDeviationType`. Read more about type differencies [here](https://www.mathsisfun.com/data/standard-deviation.html).
+
+```ts
+const input = [
+  { value: -100, frequency: 5 },
+  { value: 300, frequency: 15 },
+  { value: 255, frequency: 55 },
+];
+const populationStd = std(input); // 92.69064437987016
+const sampleStd = std(input, StandardDeviationType.SAMPLE); // 93.31483085585946
+```
+
+### quantile(items: Item\<number\>[], prob: number, isAscSorted = false)
+
+Find [quantile](https://en.wikipedia.org/wiki/Quantile_function).
+
+```ts
+const input = [
+  { value: 999, frequency: 1000 },
+  { value: 3, frequency: 1 },
+  { value: 1, frequency: 1000 },
+];
+const median = quantile(input, 0.5); // 3
+```
