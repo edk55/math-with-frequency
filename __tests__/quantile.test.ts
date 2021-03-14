@@ -96,5 +96,17 @@ describe('Math functions', () => {
       expect(median).toBe(0);
       expect(end).toBe(999);
     });
+
+    it('Should calculate readme quantile example correctly', () => {
+      const input = [
+        { value: 999, frequency: 1000 },
+        { value: 3, frequency: 1 },
+        { value: 1, frequency: 1000 },
+      ];
+
+      const median = quantile(input, 0.5);
+
+      expect(median).toBe(3);
+    });
   });
 });

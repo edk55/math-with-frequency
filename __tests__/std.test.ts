@@ -85,5 +85,24 @@ describe('Math functions', () => {
         sampleStandardDeviation(arrayFromFrequency(input.slice(0, 2))).toFixed(5)
       );
     });
+
+    it('Should calculate readme std example correctly', () => {
+      const input = [
+        { value: -100, frequency: 5 },
+        { value: 300, frequency: 15 },
+        { value: 255, frequency: 55 },
+      ];
+      const populationStd = std(input);
+      const sampleStd = std(input, StandardDeviationType.SAMPLE);
+
+      expect(populationStd).toBe(92.69064437987016);
+      expect(populationStd.toFixed(5)).toBe(
+        standardDeviation(arrayFromFrequency(input)).toFixed(5)
+      );
+      expect(sampleStd).toBe(93.31483085585946);
+      expect(sampleStd.toFixed(5)).toBe(
+        sampleStandardDeviation(arrayFromFrequency(input)).toFixed(5)
+      );
+    });
   });
 });

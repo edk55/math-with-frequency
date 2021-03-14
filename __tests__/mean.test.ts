@@ -45,5 +45,16 @@ describe('Math functions', () => {
 
       expect(result).toBe(mathMean([1, 2, 3]));
     });
+
+    it('Should calculate readme mean example correctly', () => {
+      const input = [
+        { value: 1, frequency: 10 },
+        { value: 3, frequency: 20 },
+      ];
+
+      const meanValue = mean(input);
+
+      expect(meanValue).toBe(2.3333333333333335);
+    });
   });
 });
