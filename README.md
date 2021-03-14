@@ -81,7 +81,7 @@ const input = [
 const meanValue = mean(input); // 2.3333333333333335
 ```
 
-### std(items: Item\<number\>[], type?: StandardDeviationType): number
+### std(items: Item\<number\>[], type = StandardDeviationType.POPULATION): number
 
 Calculate standard deviation. You can also specify `StandardDeviationType`. Read more about type differencies [here](https://www.mathsisfun.com/data/standard-deviation.html).
 
